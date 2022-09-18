@@ -30,13 +30,13 @@ public class App {
         System.out.print("Write product name: ");
         name = scanner.nextLine();
 
-        System.out.print("Write " + name + " quantity: ");
+        System.out.print("Write " + name + " quantity (UAH): ");
         quantity = scanner.nextDouble();
 
-        System.out.print("Write " + name + " price: ");
+        System.out.print("Write " + name + " price (UAH): ");
         price = scanner.nextDouble();
 
-        System.out.println("Write " + name + " discount: ");
+        System.out.println("Write " + name + " discount (UAH): ");
         discount = scanner.nextDouble();
     }
 
@@ -53,8 +53,8 @@ public class App {
 
         System.out.println("---------------------------------------------------------"
                 + "Product name: " + name
-                + "Product price: " + priceProduct
-                + "Discount: " + discountProduct
+                + "Product price: " + priceProduct + " UAH"
+                + "Discount: " + discountProduct + " UAH"
                 + "\n---------------------------------------------------------"
                 + "\nHave a nice day :)");
     }
