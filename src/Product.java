@@ -7,6 +7,12 @@ public class Product {
     public Product(){
     }
 
+    public Product(String name, double quantity, double price) {
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
     public String getName() {
         return name;
     }
