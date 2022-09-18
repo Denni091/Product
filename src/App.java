@@ -9,6 +9,7 @@ public class App {
     static double priceProduct;
     static double discount;
     static double discountProduct;
+    static double finalPrice;
     static Scanner scanner;
 
     public static void main(String[] args) {
@@ -31,13 +32,15 @@ public class App {
         name = scanner.nextLine();
 
         System.out.print("Write " + name + " quantity (UAH): ");
-        quantity = scanner.nextDouble();
+        quantity = Double.parseDouble(scanner.nextLine());
 
         System.out.print("Write " + name + " price (UAH): ");
-        price = scanner.nextDouble();
+        price = Double.parseDouble(scanner.nextLine());
 
-        System.out.println("Write " + name + " discount (UAH): ");
-        discount = scanner.nextDouble();
+        System.out.print("Write " + name + " discount (UAH): ");
+        discount = Double.parseDouble(scanner.nextLine());
+
+        scanner.close();
     }
 
     public static void calcProduct() {
@@ -47,15 +50,18 @@ public class App {
 
         ProductDiscount productDiscount = new ProductDiscount();
         discountProduct = productDiscount.discount(quantity, price, discount);
+
+        finalPrice = priceProduct - discountProduct;
     }
 
-    public static void cheque(){
+    public static void cheque() {
 
-        System.out.println("---------------------------------------------------------"
-                + "Product name: " + name
-                + "Product price: " + priceProduct + " UAH"
-                + "Discount: " + discountProduct + " UAH"
-                + "\n---------------------------------------------------------"
-                + "\nHave a nice day :)");
+        System.out.println(
+                "\nProduct name: " + name
+                        + "\nProduct price: " + priceProduct + " UAH"
+                        + "\nDiscount: " + discountProduct + " UAH"
+                        + "\nFinal Price: " + finalPrice + " UAH"
+                        + "\n---------------------------------------------------------"
+                        + "\nHave a nice day :)");
     }
 }
